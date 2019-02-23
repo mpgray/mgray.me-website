@@ -5,13 +5,18 @@ import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {PortfolioComponent} from './portfolio/portfolio.component';
+import {LandingpageComponent} from './landingpage/landingpage.component';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'portfolio',
+  redirectTo: 'landingpage',
   pathMatch: 'full'
 }, {
   path: '',
+  component: LandingpageComponent,
+  data: {title: 'Landing Page'}
+}, {
+  path: 'portfolio',
   component: PortfolioComponent,
   data: {title: 'Portfolio'}
 }];
