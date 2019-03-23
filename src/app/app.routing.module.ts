@@ -9,10 +9,10 @@ import {LandingpageComponent} from './landingpage/landingpage.component';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: 'landingpage',
+  redirectTo: 'portfolio',
   pathMatch: 'full'
 }, {
-  path: '',
+  path: 'landingpage',
   component: LandingpageComponent,
   data: {title: 'Landing Page'}
 }, {
