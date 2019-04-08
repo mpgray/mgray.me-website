@@ -1,0 +1,27 @@
+.left-column, .right-column {
+  background-color: lightblue;
+}
+
+.center-column {
+  background-color: white;
+}
+
+.foot-block {
+  width: 100%;
+  margin-top: 5px;
+  .foot-right, .foot-left, .foot-center {
+    float: left;
+    width: 33%;
+    @media (max-width: 768px) {
+      float: none;
+      width: 100%;
+    }
+  }
+  .foot-center {
+    width: 34%;
+  }
+}
+
+mat-slider {
+  width: 350px;
+}

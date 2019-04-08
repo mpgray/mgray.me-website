@@ -6,6 +6,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {PortfolioComponent} from './portfolio/portfolio.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
+import {SliderComponent} from './slider/slider.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,10 +20,14 @@ const routes: Routes = [{
   path: 'portfolio',
   component: PortfolioComponent,
   data: {title: 'Portfolio'}
+}, {
+  path: 'slider',
+  component: SliderComponent,
+  data: {title: 'Slider'}
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
+  imports: [RouterModule.forRoot(routes, { useHash: true }),
     FormsModule,
     BrowserModule,
     HttpClientModule
