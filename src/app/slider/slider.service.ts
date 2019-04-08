@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 interface Slider {
-  people: number;
+  id: number;
   value: number;
 }
 
@@ -13,24 +13,25 @@ export class SliderService {
   constructor(private http: HttpClient) {}
 
   getAllSliders(): Observable<Slider[]> {
-    return this.http.get<Slider[]>('http://142.93.17.255:8000/api/slider');
+    return this.http.get<Slider[]>('http://142.93.17.255:3000/slider');
   }
 
-  getSlider(people: number): Observable<Slider> {
-    return this.http.get<Slider>('http://142.93.17.255:8000/api/slider/' + people);
+  getSlider(id: number): Observable<Slider> {
+    return this.http.get<Slider>('http://142.93.17.255:3000/slider/' + id);
   }
 
   insertSlider(slider: Slider): Observable<Slider> {
-    return this.http.post<Slider>('http://142.93.17.255:8000/api/slider/', slider);
+    return this.http.post<Slider>('http://142.93.17.255:3000/slider/', slider);
   }
 
   updateSlider(slider: Slider): Observable<void> {
+    console.log(slider);
     return this.http.put<void>(
-      'http://142.93.17.255:8000/api/slider/' + slider.people, slider
+      'http://142.93.17.255:3000/slider/' + 1, slider[0]
     );
   }
 
   deleteSlider(slider: Slider) {
-    return this.http.delete('http://142.93.17.255:8000/api/slider/' + slider);
+    return this.http.delete('http://142.93.17.255:3000/slider/' + slider);
   }
 }
