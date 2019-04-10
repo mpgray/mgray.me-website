@@ -11,7 +11,7 @@ export class SliderComponent implements OnInit, OnDestroy {
   constructor(private slider: SliderService) {
   }
   people: any = [];
-  sliderValue: number;
+  sliderValue: Array<number> = new Array<number>();
   timerSubscription: Subscription;
   ngOnInit() {
     this.getSlider();
@@ -26,7 +26,7 @@ export class SliderComponent implements OnInit, OnDestroy {
     this.people = [];
       this.slider.getAllSliders().subscribe((data: {}) => {
         this.people = data;
-        this.updateValue(this.people[0].slide);
+        this.updateValue(this.people);
         this.subscribeToData();
       });
   }
@@ -40,11 +40,12 @@ export class SliderComponent implements OnInit, OnDestroy {
     this.timerSubscription = timer(5000).subscribe(() => this.getSlider());
   }
   updateValue(value) {
-    this.sliderValue = value;
+    this.sliderValue[0] = value[0].slide;
   }
 
   updateSliderValue() {
-    this.people[0].slide = this.sliderValue;
+    this.people[0].slide = this.sliderValue[0];
+    console.log('UpdateSliderValue');
     console.log(this.people[0].slide);
   }
 

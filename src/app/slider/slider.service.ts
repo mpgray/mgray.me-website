@@ -27,7 +27,7 @@ export class SliderService {
   updateSlider(slider: Slider): Observable<void> {
     console.log(slider);
     return this.http.put<void>(
-      'http://142.93.17.255:3000/slider/' + 1, slider[0]
+      'http://142.93.17.255:3000/slider/' + slider[0].id, slider[0]
     );
   }
 

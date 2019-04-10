@@ -1,14 +1,18 @@
 <!-- done with bootstrap -->
+<h3 style="text-align: center">Updates across all open pages</h3>
 <div class="row" style="border-style: solid; border-width: 1px">
   <div class="left-column col" style="text-align: right"><strong>1st Demo Slider</strong></div>
-  <div class="center-column col" *ngIf="sliderValue"><mat-slider min="1" max="10000" step="1" (click)='updateSlider()' [(value)]="sliderValue"></mat-slider></div>
-  <div class="right-column col" *ngIf="sliderValue">People: {{sliderValue}}</div>
+  <div class="center-column col" *ngIf="sliderValue[0]">
+      <mat-slider min="1" max="10000" step="1" (click)='updateSlider()' [(value)]="sliderValue[0]"></mat-slider>
+  </div>
+  <div class="right-column col" *ngIf="sliderValue[0]">People: {{sliderValue[0]}}</div>
 </div>
 
 <!-- done manually -->
 <div class="foot-block" style="text-align: right">
-  <div class="left-column foot-left">&nbsp;</div>
-  <div class="center-column foot-center">&nbsp;</div>
-  <div class="right-column foot-right">&nbsp;</div>
+  <div class="left-column foot-left"><strong></strong></div>
+  <div class="center-column foot-center">
+  </div>
+  <div class="right-column foot-right"></div>
   <br style="clear: left;" />
 </div>
