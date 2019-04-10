@@ -7,31 +7,32 @@ interface Slider {
   id: number;
   value: number;
 }
+const url = 'http://142.93.17.255:3000/slider';
 
 @Injectable()
 export class SliderService {
   constructor(private http: HttpClient) {}
 
   getAllSliders(): Observable<Slider[]> {
-    return this.http.get<Slider[]>('http://142.93.17.255:3000/slider');
+    return this.http.get<Slider[]>(url);
   }
 
   getSlider(id: number): Observable<Slider> {
-    return this.http.get<Slider>('http://142.93.17.255:3000/slider/' + id);
+    return this.http.get<Slider>(url + id);
   }
 
   insertSlider(slider: Slider): Observable<Slider> {
-    return this.http.post<Slider>('http://142.93.17.255:3000/slider/', slider);
+    return this.http.post<Slider>(url, slider);
   }
 
-  updateSlider(slider: Slider): Observable<void> {
+  updateSlider(slider: Slider, index): Observable<void> {
     console.log(slider);
     return this.http.put<void>(
-      'http://142.93.17.255:3000/slider/' + slider[0].id, slider[0]
+      url + slider[index].id, slider[index]
     );
   }
 
   deleteSlider(slider: Slider) {
-    return this.http.delete('http://142.93.17.255:3000/slider/' + slider);
+    return this.http.delete(url + slider);
   }
 }
