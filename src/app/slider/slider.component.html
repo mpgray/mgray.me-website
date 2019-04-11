@@ -2,17 +2,17 @@
 
 <!-- done with bootstrap -->
 <div class="row" style="border-style: solid; border-width: 1px">
-  <div class="left-column col" style="text-align: right"><strong>1st Demo Slider</strong></div>
-  <div class="center-column col" *ngIf="sliderValue[0]">
+  <div class="col left-column"><strong>1st Demo Slider</strong></div>
+  <div class="col center-column " *ngIf="sliderValue[0]">
       <mat-slider min="1" max="10000" step="1" (click)='updateSlider(0)' [(value)]="sliderValue[0]"></mat-slider>
   </div>
-  <div class="right-column col" *ngIf="sliderValue[0]">People: {{sliderValue[0]}}</div>
+  <div class="col right-column " *ngIf="sliderValue[0]">People: {{sliderValue[0]}}</div>
 </div>
 
 <!-- done manually -->
-<div class="foot-block" style="border-style: solid; border-width: 1px">
-  <div class="left-column foot-left" style="text-align: right"><strong>2st Demo Slider</strong></div>
-  <div class="center-column foot-center">
+<div class="foot-block" style="border: 1px solid;">
+  <div class="left-column foot-left"><strong>2nd Demo Slider</strong></div>
+  <div class="center-column foot-center" style="width: 34%">
     <mat-slider min="1" max="10000" step="1" (click)='updateSlider(1)' [(value)]="sliderValue[1]"></mat-slider>
   </div>
   <div class="right-column foot-right">People: {{sliderValue[1]}}</div>
