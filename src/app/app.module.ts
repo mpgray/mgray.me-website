@@ -10,10 +10,12 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { SliderComponent } from './slider/slider.component';
 import { SliderService } from './slider/slider.service';
+import {LayoutComponent} from './shared/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
     PortfolioComponent,
     LandingpageComponent,
     SliderComponent
