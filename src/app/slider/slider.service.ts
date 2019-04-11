@@ -7,7 +7,7 @@ interface Slider {
   id: number;
   value: number;
 }
-const url = 'http://142.93.17.255:3000/slider';
+const url = 'http://142.93.17.255:3000/slider/';
 
 @Injectable()
 export class SliderService {
